@@ -22,7 +22,7 @@
         "xdm:messageId": {
           "title": "Message ID",
           "type": "string",
-          "description": ""
+          "description": "A unique identifier across all services"
         },
         "xdm:externalID": {
           "title": "External ID",
@@ -45,24 +45,24 @@
           "description": "The Channel type.",
           "meta:enum": {
             "email":
-              "",
+              "Email channel",
             "sms":
-              "",
+              "SMS channel",
             "push":
-              "",
+              "Push notification channel",
             "inAPP":
-              ""
+              "In app notification channel"
           }
         },
         "xdm:messagePriority": {
           "title": "Message Priority",
           "type": "string",
-          "description": "Priority of message"
+          "description": "Priority of a message"
         },
         "xdm:recipient": {
           "title": "recipient",
           "$ref": "https://ns.adobe.com/experience/campaign/orchestration/recipient",
-          "description": "recipient details."
+          "description": "Details of the recipient."
         },
         "xdm:serviceName": {
           "title": "Service Name",
@@ -70,13 +70,13 @@
           "description": "The Name of the service.",
           "meta:enum": {
             "maas":
-              "",
+              "Messaging as a Service",
             "daas":
-              "",
+              "Delivery as a Service",
             "mcpns":
-              "",
+              "mcpns",
             "momentum":
-              ""
+              "momentum"
           }
         },
         "xdm:eventSourceName": {
@@ -85,11 +85,11 @@
           "description": "Stage of the journey, for example: prep, mailmerge, delivery",
           "meta:enum": {
             "prep":
-            "",
+            "The prepration stage.",
             "mailmerge":
-            "",
+            "The mail merge stage",
             "delivery":
-            ""
+            "The delivery stage."
           }
         },
         "xdm:eventType": {
@@ -98,13 +98,9 @@
           "description": "The Type of the Event.",
           "meta:enum": {
             "success":
-              "",
+              "Particular stage has been successfully passed.",
             "failure":
-              ""//,
-            //"error":
-              //"",
-            //"blacklist":
-              //""
+              "Particular stage has been failed."
           }
         },
         "xdm:eventCode": {
