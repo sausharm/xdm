@@ -42,7 +42,7 @@
         "xdm:channelType": {
           "title": "Channel Type",
           "type": "string",
-          "description": "The Channel type.",
+          "description": "The channel type.",
           "meta:enum": {
             "email":
               "Email channel",
@@ -60,14 +60,14 @@
           "description": "Priority of a message"
         },
         "xdm:recipient": {
-          "title": "recipient",
+          "title": "Recipient",
           "$ref": "https://ns.adobe.com/experience/campaign/orchestration/recipient",
           "description": "Details of the recipient."
         },
         "xdm:serviceName": {
           "title": "Service Name",
           "type": "string",
-          "description": "The Name of the service.",
+          "description": "The name of the service.",
           "meta:enum": {
             "maas":
               "Messaging as a Service",
@@ -95,7 +95,7 @@
         "xdm:eventType": {
           "title": "Event Type",
           "type": "string",
-          "description": "The Type of the Event.",
+          "description": "The type of the Event.",
           "meta:enum": {
             "success":
               "Particular stage has been successfully passed.",
@@ -104,19 +104,19 @@
           }
         },
         "xdm:eventCode": {
-          "title": "event code",
+          "title": "Event Code",
           "type": "string",
-          "description": "event code to understand the issue"
+          "description": "Event code to understand the issue"
         },
         "xdm:eventMessage": {
-          "title": "event Message",
+          "title": "Event Message",
           "type": "string",
           "description": "A more contextual message for developer to understand the issue"
         },
         "xdm:eventData": {
-          "title": "event Data",
+          "title": "Event Data",
           "type": "object",
-          "description": "custom event data"
+          "description": "Custom event data"
         }
       }
     }

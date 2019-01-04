@@ -7,9 +7,9 @@
   ],
   "$id": "https://ns.adobe.com/experience/campaign/orchestration/recipient",
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "title": "recipient",
+  "title": "Recipient",
   "type": "object",
-  "description": "recipient structure",
+  "description": "Recipient structure",
   "definitions": {
     "recipient": {
       "properties": {
