@@ -4,12 +4,20 @@
     "xdm:externalID": "13944013",
     "xdm:imsOrgID": "4F173DF05A373EBF0A495E41@AdobeOrg",
     "xdm:instanceName": "virgini_mkt_prod1",
-    "xdm:channelType": "email",
-    "xdm:recipient": {
-        "xdm:address": "bryan.dunn@bigfoot.com"
+    "xdm:channel": {
+      "@id": "https://ns.adobe.com/xdm/channels/email",
+      "@type": "https://ns.adobe.com/xdm/channel-types/email"
     },
-    "xdm:serviceName": "momentum",
-    "xdm:eventSourceName": "delivery",
+    "xdm:profile": {
+        "xdm:workEmail": {
+          "xdm:primary": true,
+          "xdm:address": "bryan.dunn@bigfoot.com"
+        }
+    },
+    "xdm:eventSource": {
+      "xdm:serviceName": "momentum",
+      "xdm:stage": "delivery"
+    },
     "xdm:eventType": "failure",
     "xdm:eventCode": "3",
     "xdm:eventMessage": "554 5.4.7 [internal] exceeded max retries without delivery"

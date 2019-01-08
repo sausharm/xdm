@@ -5,7 +5,7 @@
     "you may not use this file except in compliance with the License. You may obtain a copy",
     "of the License at https://creativecommons.org/licenses/by/4.0/"
   ],
-  "$id": "https://ns.adobe.com/experience/campaign/orchestration/feedbackevent",
+  "$id": "https://ns.adobe.com/experience/campaign/feedback/feedbackevent",
   "$schema": "http://json-schema.org/draft-06/schema#",
   "title": "User journey feedback event",
   "type": "object",
@@ -37,59 +37,51 @@
         "xdm:instanceName": {
           "title": "Instance Name",
           "type": "string",
-          "description": "Name of the instance"
+          "description": "Name of the instance originating this event."
         },
-        "xdm:channelType": {
-          "title": "Channel Type",
-          "type": "string",
-          "description": "The channel type.",
-          "meta:enum": {
-            "email":
-              "Email channel",
-            "sms":
-              "SMS channel",
-            "push":
-              "Push notification channel",
-            "inAPP":
-              "In app notification channel"
-          }
+        "xdm:channel": {
+          "title": "Channel Name",
+          "description": "The channel related to this FeedbackEvent.",
+          "$ref": "https://ns.adobe.com/xdm/channels/channel"
         },
-        "xdm:messagePriority": {
-          "title": "Message Priority",
-          "type": "string",
-          "description": "Priority of a message"
+        "xdm:profile": {
+          "title": "Profile",
+          "$ref": "https://ns.adobe.com/xdm/context/profile",
+          "description": "The recipient of the message. This property is primarily used to link the message to a Profile."
         },
-        "xdm:recipient": {
-          "title": "Recipient",
-          "$ref": "https://ns.adobe.com/experience/campaign/orchestration/recipient",
-          "description": "Details of the recipient."
-        },
-        "xdm:serviceName": {
-          "title": "Service Name",
-          "type": "string",
-          "description": "The name of the service.",
-          "meta:enum": {
-            "maas":
-              "Messaging as a Service",
-            "daas":
-              "Delivery as a Service",
-            "mcpns":
-              "mcpns",
-            "momentum":
-              "momentum"
-          }
-        },
-        "xdm:eventSourceName": {
-          "title": "Event Source Name",
-          "type": "string",
-          "description": "Stage of the journey, for example: prep, mailmerge, delivery",
-          "meta:enum": {
-            "prep":
-            "The prepration stage.",
-            "mailmerge":
-            "The mail merge stage",
-            "delivery":
-            "The delivery stage."
+        "xdm:eventSource": {
+          "title": "Event Source",
+          "type": "object",
+          "description": "Source originating this particular event",
+          "properties": {
+            "xdm:serviceName": {
+              "title": "Service Name",
+              "type": "string",
+              "description": "The name of the service originating this event",
+              "meta:enum": {
+                "maas":
+                  "Messaging as a Service",
+                "daas":
+                  "Delivery as a Service",
+                "mcpns":
+                  "mcpns",
+                "momentum":
+                  "momentum"
+              }
+            },
+            "xdm:stage": {
+              "title": "Stage Name",
+              "type": "string",
+              "description": "Stage of the service originating this event, for example: prep, mailmerge, delivery",
+              "meta:enum": {
+                "prep":
+                "The prepration stage.",
+                "mailmerge":
+                "The mail merge stage",
+                "delivery":
+                "The delivery stage."
+              }
+            }
           }
         },
         "xdm:eventType": {
@@ -98,9 +90,12 @@
           "description": "The type of the Event.",
           "meta:enum": {
             "success":
-              "Particular stage has been successfully passed.",
+              "Particular event has success status.",
             "failure":
-              "Particular stage has been failed."
+              "Particular event has failure status.",
+            "blacklist":
+              "Particular event has blacklist status. MCPNS sends status as 'blacklist' if push fails due to blacklisting."
+
           }
         },
         "xdm:eventCode": {
@@ -126,9 +121,9 @@
     "xdm:messageId",
     "xdm:externalID",
     "xdm:imsOrgID",
-    "xdm:channelType",
-    "xdm:recipient",
-    "xdm:serviceName",
+    "xdm:channel",
+    "xdm:profile",
+    "xdm:eventSource",
     "xdm:eventType"
   ],
   "allOf": [
