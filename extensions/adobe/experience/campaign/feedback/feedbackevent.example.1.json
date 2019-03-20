@@ -8,11 +8,8 @@
       "@id": "https://ns.adobe.com/xdm/channels/email",
       "@type": "https://ns.adobe.com/xdm/channel-types/email"
     },
-    "xdm:profile": {
-        "xdm:workEmail": {
-          "xdm:primary": true,
-          "xdm:address": "bryan.dunn@bigfoot.com"
-        }
+    "xdm:recipient": {
+      "xdm:address": "bryan.dunn@bigfoot.com"
     },
     "xdm:eventSource": {
       "xdm:serviceName": "momentum",
@@ -22,4 +19,3 @@
     "xdm:eventCode": "3",
     "xdm:eventMessage": "554 5.4.7 [internal] exceeded max retries without delivery"
   }
-  

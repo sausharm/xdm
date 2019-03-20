@@ -44,10 +44,10 @@
           "description": "The channel related to this FeedbackEvent.",
           "$ref": "https://ns.adobe.com/xdm/channels/channel"
         },
-        "xdm:profile": {
-          "title": "Profile",
-          "$ref": "https://ns.adobe.com/xdm/context/profile",
-          "description": "The recipient of the message. This property is primarily used to link the message to a Profile."
+        "xdm:recipient": {
+          "title": "Recipient",
+          "$ref": "https://ns.adobe.com/experience/campaign/feedback/recipient",
+          "description": "Details of the recipient."
         },
         "xdm:eventSource": {
           "title": "Event Source",
@@ -107,11 +107,6 @@
           "title": "Event Message",
           "type": "string",
           "description": "A more contextual message for developer to understand the issue"
-        },
-        "xdm:eventData": {
-          "title": "Event Data",
-          "type": "object",
-          "description": "Custom event data"
         }
       }
     }
